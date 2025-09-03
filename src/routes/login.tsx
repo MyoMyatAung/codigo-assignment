@@ -2,13 +2,13 @@ import { createFileRoute, redirect } from '@tanstack/react-router'
 import { useState } from 'react'
 
 export const Route = createFileRoute('/login')({
-  validateSearch: (search) => ({
-    redirect: (search.redirect as string) || '/',
-  }),
+  // validateSearch: (search) => ({
+  //   redirect: (search.redirect as string) || '/',
+  // }),
   beforeLoad: ({ context, search }) => {
     // Redirect if already authenticated
     if (context.auth.isAuthenticated) {
-      throw redirect({ to: search.redirect })
+      throw redirect({ to: '/' })
     }
   },
   component: LoginComponent,
@@ -16,7 +16,7 @@ export const Route = createFileRoute('/login')({
 
 function LoginComponent() {
   const { auth } = Route.useRouteContext()
-  const { redirect } = Route.useSearch()
+  // const { redirect } = Route.useSearch()
   const navigate = Route.useNavigate()
   const [username, setUsername] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -30,7 +30,7 @@ function LoginComponent() {
     try {
       await auth.login(username)
       // Navigate to the redirect URL using router navigation
-      navigate({ to: redirect || '/' })
+      navigate({ to: '/' })
     } catch (err) {
       setError('Invalid username or password')
     } finally {
