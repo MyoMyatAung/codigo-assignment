@@ -50,8 +50,6 @@ function DashboardComponent() {
     }
   }, [fetchNextPage, inView])
 
-  console.log(data);
-
   return (
     <div>
       <h1>Players</h1>

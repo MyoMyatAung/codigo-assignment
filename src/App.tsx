@@ -4,6 +4,9 @@ import { router } from './router'
 import { ThemeProvider } from './components/theme-provider'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import './App.css';
+import { Provider } from 'react-redux';
+import { persistor, store } from './redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 function InnerApp() {
     const auth = useAuth()
@@ -17,7 +20,11 @@ function App() {
         <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
             <QueryClientProvider client={queryClient}>
                 <AuthProvider>
-                    <InnerApp />
+                    <Provider store={store}>
+                        <PersistGate loading={null} persistor={persistor}>
+                            <InnerApp />
+                        </PersistGate>
+                    </Provider>
                 </AuthProvider>
             </QueryClientProvider>
         </ThemeProvider>

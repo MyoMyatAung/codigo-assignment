@@ -10,8 +10,11 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@radix-ui/react-alert-dialog": "^1.1.15",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-select": "^2.2.6",
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.2.8",
@@ -21,6 +24,7 @@
     "@tanstack/react-query": "^5.85.9",
     "@tanstack/react-router": "^1.130.2",
     "@tanstack/react-router-devtools": "^1.131.5",
+    "@tanstack/react-table": "^8.21.3",
     "@tanstack/router-plugin": "^1.121.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -29,8 +33,11 @@
     "react-dom": "^19.0.0",
     "react-intersection-observer": "^9.16.0",
     "react-redux": "^9.2.0",
+    "redux-persist": "^6.0.0",
     "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.1.12",
+    "uuid": "^11.1.0",
+    "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "^5.83.1",
