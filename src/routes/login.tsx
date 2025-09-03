@@ -5,7 +5,7 @@ export const Route = createFileRoute('/login')({
   // validateSearch: (search) => ({
   //   redirect: (search.redirect as string) || '/',
   // }),
-  beforeLoad: ({ context, search }) => {
+  beforeLoad: ({ context }) => {
     // Redirect if already authenticated
     if (context.auth.isAuthenticated) {
       throw redirect({ to: '/' })
